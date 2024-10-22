@@ -1,3 +1,23 @@
+# Prepending
+
+
+sudo apt-get remove binutils-arm-none-eabi gcc-arm-none-eabi 
+sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa 
+sudo apt-get update 
+sudo apt-get install gcc-arm-none-eabi 
+sudo apt-get install gdb-arm-none-eabi 
+arm-none-eabi-g++ --version
+sudo apt install make
+
+Modify generalDefines.h
+There are a bunch of #define change this one to look like this
+#define ENNOID_HV					1
+
+
+make -j
+
+done :)
+
 # Other parts of this project
 
 This is the firmware repository containing all firmware source files. There are three more repositories for this project:
@@ -15,6 +35,7 @@ This is the firmware repository containing all firmware source files. There are 
 - Configure `generalDefines.h` for LV, HV, SS, or SS_LITE versions
 - Makefile has rules for flashing with STLink or JLink
 - Could also load using bootloader with binary
+
 
 When flashing the application the start address should be: <b>0x08000000</b>
 When flashing the bootloader the start address should be: <b>0x08032000</b>
