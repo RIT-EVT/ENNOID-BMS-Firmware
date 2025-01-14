@@ -26,4 +26,13 @@ History
 *.bak
 *.sct
 *.dbgconf
+main-d.txt
+main-h.txt
+main-nm.txt
+main-St.txt
+main.elf
+main.hex
+main.map
+ENNOID-BMS.bin
+.vscode
 tools/

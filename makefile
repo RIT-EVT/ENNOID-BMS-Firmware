@@ -110,7 +110,7 @@ OPENOCD_FLAGS_STLINK_V3 = -f interface/stlink.cfg -f target/stm32f3x.cfg
 
 OPENOCD_FLAGS_RM_PROTECTION_BIT = -d0 -f interface/stlink-v2.cfg -f target/stm32f3x.cfg -f GCC/lock.cfg
 
-all: main.elf main.bin main.hex main-St.txt main-d.txt main-h.txt main-nm.txt
+all: main.elf ENNOID-BMS.bin main.hex main-St.txt main-d.txt main-h.txt main-nm.txt
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@ -lm
@@ -120,7 +120,7 @@ all: main.elf main.bin main.hex main-St.txt main-d.txt main-h.txt main-nm.txt
 main.elf: $(OBJS)
 	$(CC) -T$(LINKER_SCRIPT) $(CFLAGS) $(LINKER_FLAGS) $^ -o $@
 
-main.bin: main.elf
+ENNOID-BMS.bin: main.elf
 	$(OBJCOPY) -O binary $< $@
 
 main.hex: main.elf

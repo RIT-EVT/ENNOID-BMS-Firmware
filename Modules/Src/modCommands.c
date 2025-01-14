@@ -23,8 +23,8 @@
 #include "confparser.h"
 #include "libMempools.h"
 #include "conf_default.h"
-
-
+//#define HW_NAME "schroomer"
+//#include "generalDefines.h"
 // Private variables
 static uint8_t modCommandsSendBuffer[PACKET_MAX_PL_LEN];
 static void(*modCommandsSendFunction)(unsigned char *data, unsigned int len) = 0;
